@@ -133,7 +133,7 @@ namespace AzureTest
 
             SqlConnection connection = new SqlConnection();
             SqlCommand sCommand = new SqlCommand();
-            connection.ConnectionString = Program.ConnectionString;
+            connection.ConnectionString = Program.ConnectionAzure;
 
             try
             {
@@ -227,7 +227,7 @@ namespace AzureTest
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: このコード行はデータを 'oo_AtClippingDataSet.t_order' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
-            this.t_orderTableAdapter.Fill(this.oo_AtClippingDataSet.t_order);
+//            this.t_orderTableAdapter.Fill(this.oo_AtClippingDataSet.t_order);
 
         }
 
@@ -241,7 +241,7 @@ namespace AzureTest
 
             SqlConnection connection2 = new SqlConnection();
             SqlCommand sCommand2 = new SqlCommand();
-            connection2.ConnectionString = Program.ConnectionString;
+            connection2.ConnectionString = Program.ConnectionAzure;
 
             foreach (String tb in tables)
             {
@@ -302,6 +302,142 @@ namespace AzureTest
 
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection();
+            SqlCommand sCommand = new SqlCommand();
+            connection.ConnectionString = Program.ConnectionLocal;
 
+
+
+            sCommand.CommandText = "update c_research_check set theme = 'AAAAAAAAAAAAAAAAAAAAAAAAAAA' where id = 6";
+            sCommand.Connection = connection;
+
+            var sw = new System.Diagnostics.Stopwatch();
+
+            // 計測開始
+            sw.Start();
+
+
+
+            for (int i = 0; i < 1000; i++)
+            {
+                connection.Open();
+                int num = sCommand.ExecuteNonQuery();
+                connection.Close();
+            }
+
+
+            sw.Stop();
+
+            TimeSpan ts = sw.Elapsed;
+
+            label2.Text = ts.ToString();
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection();
+            SqlCommand sCommand = new SqlCommand();
+            connection.ConnectionString = Program.ConnectionLocal;
+
+
+
+            sCommand.CommandText = "update c_research_check set theme = 'AAAAAAAAAAAAAAAAAAAAAAAAAAA' where id = 6";
+            sCommand.Connection = connection;
+
+            var sw = new System.Diagnostics.Stopwatch();
+
+            // 計測開始
+            sw.Start();
+
+            connection.Open();
+
+
+            for (int i = 0; i < 1000; i++)
+            {
+                int num = sCommand.ExecuteNonQuery();
+
+            }
+
+            connection.Close();
+
+            sw.Stop();
+
+            TimeSpan ts = sw.Elapsed;
+
+            label3.Text = ts.ToString();
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection();
+            SqlCommand sCommand = new SqlCommand();
+            connection.ConnectionString = Program.ConnectionAzure;
+
+
+
+            sCommand.CommandText = "update c_research_check set theme = 'AAAAAAAAAAAAAAAAAAAAAAAAAAA' where id = 6";
+            sCommand.Connection = connection;
+
+            var sw = new System.Diagnostics.Stopwatch();
+
+            // 計測開始
+            sw.Start();
+
+
+
+            for (int i = 0; i < 1000; i++)
+            {
+                connection.Open();
+                int num = sCommand.ExecuteNonQuery();
+                connection.Close();
+            }
+
+
+            sw.Stop();
+
+            TimeSpan ts = sw.Elapsed;
+
+            label4.Text = ts.ToString();
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection();
+            SqlCommand sCommand = new SqlCommand();
+            connection.ConnectionString = Program.ConnectionAzure;
+
+
+
+            sCommand.CommandText = "update c_research_check set theme = 'AAAAAAAAAAAAAAAAAAAAAAAAAAA' where id = 6";
+            sCommand.Connection = connection;
+
+            var sw = new System.Diagnostics.Stopwatch();
+
+            // 計測開始
+            sw.Start();
+
+            connection.Open();
+
+
+            for (int i = 0; i < 1000; i++)
+            {
+                int num = sCommand.ExecuteNonQuery();
+
+            }
+
+            connection.Close();
+
+            sw.Stop();
+
+            TimeSpan ts = sw.Elapsed;
+
+            label5.Text = ts.ToString();
+
+        }
     }
 }
