@@ -12,8 +12,11 @@ using System.Data.SqlClient;
 
 namespace AzureTest
 {
+    // aaaaaaaaaa
+    // bbbbbbbb
     public partial class Form1 : Form
     {
+        public static int x = 0;
         public static String[] tables = {
 //"c_research_check",
 //"holiday",
