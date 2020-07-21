@@ -12,54 +12,56 @@ using System.Data.SqlClient;
 
 namespace AzureTest
 {
-    // aaaaaaaaaa
-    // bbbbbbbb
     public partial class Form1 : Form
     {
         public static int x = 0;
         public static String[] tables = {
+/*
 //"c_research_check",
 //"holiday",
-//"m_media_group",
+"m_media_group",
 //"o_th_hansya",
 //"old_納品リスト",
-"qrerror",
-"t_delivery",
-"t_keyword_tests",
+//"qrerror",
+//"t_delivery",
+//"t_keyword_tests",
 //"t_last_post_time",
 //"t_last_update_time",
-"t_loginout",
-"t_media_old",
+//"t_loginout",
+//"t_media_old",
 "t_new_media",
-"t_old_test_keywords",
+//"t_old_test_keywords",
 "t_option",
 "t_QRCheck",
 "t_se",
 "t_search_conditions",
-"t_test_results",
+//"t_test_results",
+
+
 "t_user_open",
-"temp_nipou",
+//"temp_nipou",
 //"th_config",
 //"th_hansya",
 //"th_imageList",
 //"th_list",
 //"th_order",
 //"th_order_sp",
-"ts_chat",
-"ts_holiday",
+//"ts_chat",
+//"ts_holiday",
 "ts_mailInfo",
 "ts_nouhin",
 "ts_order_spe",
-"ts_rtf",
-"ts_rtfMemo",
-"ts_rtfSiyou",
+//"ts_rtf",
+//"ts_rtfMemo",
+//"ts_rtfSiyou",
 "ts_schedule",
 "ts_staff2",
 "ts_syomei",
-"納品マスタ",
+//"納品マスタ",
 "t_media_memo",
 "t_media",
 "t_media_order",
+*/
 "t_research_report",
 "t_label_print",
 "t_unclear_report",
@@ -68,13 +70,14 @@ namespace AzureTest
 "t_reference_number",
 "t_research",
 "t_order_info",
+
 "ts_order_sub",
-"納品リスト",
+//"納品リスト",
 "t_staff",
 "ts_orderSort",
 "ts_nipou",
 "t_old_user",
-"t_old_keywords",
+//"t_old_keywords",
 "t_notification",
 "t_foresee"
             };
@@ -282,7 +285,8 @@ namespace AzureTest
                 label1.Text = tb + " " + dtTemp3.Rows.Count.ToString();
                 label1.Refresh();
 
-                String Delete_String = "delete " + tb;
+//                String Delete_String = "delete " + tb;
+                String Delete_String = "truncate table " + tb;
 
                 connection2.Open();
 
