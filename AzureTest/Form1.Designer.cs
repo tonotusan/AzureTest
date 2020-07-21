@@ -1,4 +1,4 @@
-﻿namespace AzureTest
+﻿namespace AzureTableTool
 {
     partial class Form1
     {

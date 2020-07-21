@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AzureTest
+namespace AzureTableTool
 {
     public partial class FSplash : Form
     {

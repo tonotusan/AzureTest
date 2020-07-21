@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 
-namespace AzureTest
+namespace AzureTableTool
 {
 
     public partial class Form1 : Form
